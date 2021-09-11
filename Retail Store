@@ -1,0 +1,7 @@
+SELECT R.RName, count(R.Location) AS Loc 
+FROM RetailOutlet R 
+LEFT JOIN SalesMan S 
+ON R.ROID = S.ROID 
+WHERE R.Location!='New York' 
+GROUP BY R.RName 
+HAVING count(S.SID)=1;
